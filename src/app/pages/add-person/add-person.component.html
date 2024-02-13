@@ -1,0 +1,187 @@
+<div class="wrapper" [class.wrapperDark]="this.mode == true">
+  <form #addPersonForm="ngForm" (ngSubmit)="send()">
+    <h1 class="hajeden" [class.darkH1]="this.mode == true">Add new person!</h1>
+
+    <div class="form-box" [class.darkFormBoxInput]="this.mode == true">
+      <label for="firstname">First name:</label>
+      <input
+        type="text"
+        name="firstname"
+        placeholder="Enter the first name"
+        #firstname="ngModel"
+        required
+        minlength="2"
+        [(ngModel)]="person.first_name"
+        (input)="showValue(firstname)"
+        [class.darkSelect]="this.mode == true"
+      />
+      <ng-container *ngIf="firstname.invalid && firstname.touched">
+        <div *ngIf="firstname.errors?.['required']">
+          <p class="error-text">Enter the first name</p>
+        </div>
+        <div *ngIf="firstname.errors?.['minlength']">
+          <p class="error-text">
+            The first name should consist of at least two letters
+          </p>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="form-box" [class.darkFormBoxInput]="this.mode == true">
+      <label for="secondname">Second name:</label>
+      <input
+        type="text"
+        name="secondname"
+        placeholder="Enter the second name"
+        required
+        [(ngModel)]="person.second_name"
+        [class.darkSelect]="this.mode == true"
+        #secondname="ngModel"
+      />
+      <ng-container *ngIf="secondname.invalid && secondname.touched">
+        <div *ngIf="secondname.errors?.['required']">
+          <p class="error-text">Enter the second name</p>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="form-box" [class.darkFormBoxInput]="this.mode == true">
+      <label for="gender">Gender:</label>
+      <select
+        [(ngModel)]="person.gender"
+        name="gender"
+        #gender="ngModel"
+        required
+        [class.darkSelect]="this.mode == true"
+      >
+        <option value="undefined" selected disabled hidden>
+          Select the gender
+        </option>
+        <option *ngFor="let gen of genderTable">{{ gen }}</option>
+      </select>
+      <ng-container *ngIf="gender.invalid && gender.touched">
+        <div *ngIf="gender.errors">
+          <p class="error-text">Select the gender</p>
+        </div>
+      </ng-container>
+    </div>
+
+    <!--<div class="form-box">
+    <label for="gender">Gender:</label>
+    <input
+      type="text"
+      name="gender"
+      placeholder="Enter the gender"
+      required
+      [(ngModel)]="person.gender"
+    />
+    <p class="error-text">error</p>
+  </div>-->
+
+    <div class="form-box" [class.darkFormBoxInput]="this.mode == true">
+      <label for="birthdate">Birth date:</label>
+      <input
+        type="date"
+        name="birthdate"
+        #birthdate="ngModel"
+        required
+        [class.darkSelect]="this.mode == true"
+        [(ngModel)]="myDate"
+      />
+      <ng-container *ngIf="birthdate.invalid && birthdate.touched">
+        <div *ngIf="birthdate.errors?.['required']">
+          <p class="error-text">Enter the birth date</p>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="form-box" [class.darkFormBoxInput]="this.mode == true">
+      <label for="city">City:</label>
+      <input
+        type="text"
+        name="city"
+        placeholder="Enter the city"
+        required
+        #city="ngModel"
+        [class.darkSelect]="this.mode == true"
+        [(ngModel)]="person.city"
+      />
+      <ng-container *ngIf="city.invalid && city.touched">
+        <div *ngIf="city.errors?.['required']">
+          <p class="error-text">Enter the city</p>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="form-box" [class.darkFormBoxInput]="this.mode == true">
+      <label for="phonenumber">Phone number:</label>
+      <input
+        type="text"
+        pattern="[0-9]+"
+        name="phonenumber"
+        placeholder="Enter the phone number"
+        required
+        #phonenumber="ngModel"
+        minlength="9"
+        maxlength="9"
+        [class.darkSelect]="this.mode == true"
+        [(ngModel)]="person.phone_number"
+        (input)="showValue(phonenumber)"
+      />
+      <ng-container *ngIf="phonenumber.invalid && phonenumber.touched">
+        <div *ngIf="phonenumber.errors?.['required']">
+          <p class="error-text">Enter the phone number</p>
+        </div>
+        <div
+          *ngIf="phonenumber.errors?.['pattern'] || phonenumber.errors?.['minlength'] || phonenumber.errors?.['maxlength']"
+        >
+          <p class="error-text">Enter the phone number correctly</p>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="form-box" [class.darkFormBoxInput]="this.mode == true">
+      <label for="email">E-mail:</label>
+      <input
+        type="text"
+        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+        name="email"
+        placeholder="Enter the e-mail address"
+        required
+        #email="ngModel"
+        [class.darkSelect]="this.mode == true"
+        [(ngModel)]="person.email"
+        (input)="showValue(email)"
+      />
+      <ng-container *ngIf="email.invalid && email.touched">
+        <div
+          *ngIf="phonenumber.errors?.['required'] && (person.email == undefined || person.email == '' || person.email == null)"
+        >
+          <p class="error-text">Enter the e-mail address</p>
+        </div>
+        <div *ngIf="email.errors?.['pattern']">
+          <p class="error-text">Enter the e-mail address correctly</p>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="buttonsdiv">
+      <button
+        type="button"
+        [class.darkButton]="this.mode == true"
+        (click)="goBack()"
+      >
+        Back
+      </button>
+      <button type="reset" [class.darkButton]="this.mode == true">Clear</button>
+      <button
+        type="submit"
+        [class.darkButton]="this.mode == true"
+        [disabled]="addPersonForm.invalid"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</div>
+<div class="empty">wqeqweqwe</div>

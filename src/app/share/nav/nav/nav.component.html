@@ -1,0 +1,21 @@
+<div class="topnav">
+  <div class="title" routerLink="/blockview">
+    <span class="material-symbols-outlined logo">group</span>
+    <h1>AboutPeople App</h1>
+  </div>
+
+  <div class="rightnav">
+    <div class="navbutton" routerLink="/blockview" routerLinkActive="clicked">
+      <h1>Block view</h1>
+    </div>
+    <div class="navbutton" routerLink="/lineview" routerLinkActive="clicked">
+      <h1>List view</h1>
+    </div>
+    <div class="navbutton" routerLink="/addperson" routerLinkActive="clicked">
+      <h1>Add</h1>
+    </div>
+    <div class="navbutton" (click)="changeMode()">
+      <h1><span class="material-symbols-outlined motive">contrast</span></h1>
+    </div>
+  </div>
+</div>

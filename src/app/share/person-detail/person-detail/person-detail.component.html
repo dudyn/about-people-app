@@ -1,0 +1,99 @@
+<div
+  class="block"
+  [class.blockDark]="mode == true"
+  [class.opacity]="isConfirmOpen"
+>
+  <div class="line">
+    <h1 [class.right1Dark]="mode == true">PERSON'S DATA</h1>
+    <table>
+      <tr class="line" [class.darkTr]="mode == true">
+        <td class="left1">ID:</td>
+        <td class="right1" [class.right1Dark]="mode == true">
+          {{ person.id }}
+        </td>
+      </tr>
+      <tr class="line" [class.darkTr]="mode == true">
+        <td class="left1">first name:</td>
+        <td class="right1" [class.right1Dark]="mode == true">
+          {{ person.first_name }}
+        </td>
+      </tr>
+      <tr class="line" [class.darkTr]="mode == true">
+        <td class="left1">second name:</td>
+        <td class="right1" [class.right1Dark]="mode == true">
+          {{ person.second_name }}
+        </td>
+      </tr>
+      <tr class="line" [class.darkTr]="mode == true">
+        <td class="left1">gender:</td>
+        <td class="right1" [class.right1Dark]="mode == true">
+          {{ person.gender }}
+        </td>
+      </tr>
+      <tr class="line" [class.darkTr]="mode == true">
+        <td class="left1">birth date:</td>
+        <td class="right1" [class.right1Dark]="mode == true">
+          {{ person.birth_date | date: "dd.MM.yyyy" }}r.
+        </td>
+      </tr>
+      <tr class="line" [class.darkTr]="mode == true">
+        <td class="left1">city:</td>
+        <td class="right1" [class.right1Dark]="mode == true">
+          {{ person.city }}
+        </td>
+      </tr>
+      <tr
+        class="line"
+        [class.darkTr]="mode == true"
+        *ngIf="person.phone_number"
+      >
+        <td class="left1">phone number:</td>
+        <td class="right1" [class.right1Dark]="mode == true">
+          {{
+            person.phone_number.slice(0, 3) +
+              " " +
+              person.phone_number.slice(3, 6) +
+              " " +
+              person.phone_number.slice(6, 9)
+          }}
+        </td>
+      </tr>
+      <tr class="line" [class.darkTr]="mode == true">
+        <td class="left1">e-mail:</td>
+        <td class="right1" [class.right1Dark]="mode == true">
+          {{ person.email }}
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="buttonsdiv">
+    <button [class.darkButton]="mode == true" (click)="goBack()">Back</button>
+    <button [class.darkButton]="mode == true" routerLink="/editperson">
+      Edit
+    </button>
+    <button [class.darkButton]="mode == true" (click)="openConfirm()">
+      Delete
+    </button>
+  </div>
+</div>
+
+<div
+  class="confirm"
+  [class.confirmDark]="mode == true"
+  [class.hidden]="!isConfirmOpen"
+>
+  <h2>Are you sure that you want to delete person?</h2>
+  <div class="buttonsdiv">
+    <ng-container *ngIf="person.id"
+      ><button
+        [class.darkButton]="mode == true"
+        (click)="deletePerson(person.id)"
+      >
+        Yes
+      </button></ng-container
+    >
+    <button [class.darkButton]="mode == true" (click)="closeConfirm()">
+      No
+    </button>
+  </div>
+</div>

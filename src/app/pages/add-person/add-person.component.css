@@ -1,0 +1,257 @@
+.wrapper {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  margin: auto;
+  margin-top: 30px;
+  color: black;
+  border-radius: 30px;
+  background-color: rgb(202, 202, 202);
+  box-shadow: 0px 0px 10px 0px rgb(100, 100, 100);
+  padding: 40px 40px 20px 40px;
+  font-size: 20px;
+  font-family: "Roboto Condensed", sans-serif;
+  vertical-align: center;
+}
+
+.wrapperDark {
+  background-color: rgb(70, 70, 70) !important;
+  color: rgb(219, 219, 219) !important;
+  box-shadow: 0px 0px 10px 0px rgb(29, 29, 29) !important;
+}
+
+.darkButton {
+  background-color: rgb(125, 125, 235) !important;
+  color: rgb(39, 39, 39) !important;
+}
+
+.darkButton:disabled {
+  background-color: rgb(121, 121, 121) !important;
+}
+
+.darkButton:disabled:hover {
+  background-color: rgb(121, 121, 121) !important;
+}
+
+.darkButton:hover {
+  background-color: rgb(214, 214, 214) !important;
+}
+
+.darkH1 {
+  color: rgb(125, 125, 235) !important;
+}
+
+.hajeden {
+  text-align: center;
+  margin-bottom: 30px;
+  color: rgb(74, 74, 226);
+}
+
+.form-box {
+  margin-bottom: 15px;
+}
+
+.form-box label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid rgb(170, 170, 170);
+  border-radius: 5px;
+}
+
+.darkFormBoxInput input {
+  border: 1px solid rgb(60, 60, 60);
+}
+
+.form-box input::placeholder {
+  padding-left: 5px;
+}
+
+.darkFormBoxInput input::placeholder {
+  color: rgb(180, 180, 180) !important;
+}
+
+.form-box select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid rgb(170, 170, 170);
+  border-radius: 5px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.darkFormBoxInput select {
+  border: 1px solid rgb(60, 60, 60);
+}
+
+.darkFormBoxInput select:focus {
+  border: 1px solid rgb(125, 125, 235) !important;
+  box-shadow: 0 0 5px rgb(37, 37, 37) !important;
+}
+
+.form-box input:focus {
+  outline: none !important;
+  border: 1px solid rgb(74, 74, 226);
+  box-shadow: 0 0 5px #acacac;
+}
+
+.darkFormBoxInput input:focus {
+  border: 1px solid rgb(125, 125, 235);
+  box-shadow: 0 0 5px rgb(37, 37, 37);
+}
+
+.form-box option {
+  padding: 30px;
+}
+
+.darkFormBoxInput option {
+  color: rgb(219, 219, 219) !important;
+}
+
+.form-box select:focus {
+  outline: none !important;
+  border: 1px solid rgb(74, 74, 226);
+  box-shadow: 0 0 5px #acacac;
+}
+
+.form-box.error input {
+  border: 1px solid rgb(0, 137, 250);
+  background-color: rgba(0, 137, 250, 0.1);
+}
+
+.form-box .error-text {
+  margin: 5px 0 0 10px;
+  font-size: 14px;
+  color: rgb(222, 0, 0);
+}
+
+.form-box.error .error-text {
+  visibility: visible;
+}
+
+button {
+  background-color: rgb(74, 74, 226);
+  color: rgb(255, 255, 255);
+  padding: 10px 0 10px 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 25px;
+  width: 80px;
+  font-size: 16px;
+  background-color: rgb(74, 74, 226);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:disabled {
+  background-color: #8a8a8a;
+  cursor: default;
+}
+
+button:disabled:hover {
+  background-color: #8a8a8a;
+}
+
+button:hover {
+  background-color: rgba(71, 71, 71);
+}
+
+.buttonsdiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ng-invalid.ng-touched:not(form) {
+  border: solid 2px;
+  border-color: rgb(222, 0, 0);
+}
+
+input[type="date"] {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+}
+
+input[type="date"].ng-invalid {
+  color: rgb(124, 124, 124) !important;
+}
+
+.darkFormBoxInput input[type="date"].ng-invalid.ng-touched {
+  color: rgb(180, 180, 180) !important;
+}
+
+.darkFormBoxInput input[type="date"].ng-touched {
+  color: rgb(219, 219, 219) !important;
+}
+
+.darkFormBoxInput input[type="date"] {
+  color: rgb(180, 180, 180) !important;
+}
+
+input[type="text"] {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 99%;
+  background-position-y: 7px;
+  border: 1px solid #dfdfdf;
+}
+
+.darkFormBoxInput select {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='rgb(30, 30, 30)' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+}
+
+select.ng-invalid {
+  color: rgb(124, 124, 124);
+}
+
+.darkFormBoxInput select.ng-invalid {
+  color: rgb(180, 180, 180) !important;
+}
+
+select option {
+  color: rgb(0, 0, 0);
+}
+
+::-webkit-calendar-picker-indicator {
+  /*
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="rgb(74, 74, 226)" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
+ */
+  cursor: pointer;
+}
+
+::-webkit-calendar-picker-indicator:hover {
+  filter: invert(0.6);
+}
+
+.darkFormBoxInput ::-webkit-calendar-picker-indicator {
+  filter: invert(0.15);
+}
+
+.darkFormBoxInput ::-webkit-calendar-picker-indicator:hover {
+  filter: invert(0.8);
+}
+
+.empty {
+  margin: 15px 15px 15px 15px;
+  visibility: hidden;
+}
+
+.darkSelect {
+  background-color: rgb(99, 99, 99) !important;
+  color: rgb(219, 219, 219) !important;
+}

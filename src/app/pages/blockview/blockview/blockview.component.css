@@ -1,0 +1,115 @@
+.border {
+  margin-top: 20px;
+  display: block;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.block {
+  color: black;
+  display: inline-block;
+  margin: 10px 15px 10px 15px;
+  width: 200px;
+  border-radius: 10px;
+  background-color: rgb(192, 192, 192);
+  box-shadow: 0px 0px 10px 0px rgb(100, 100, 100);
+  cursor: pointer;
+}
+
+.blockDark {
+  background-color: rgb(70, 70, 70) !important;
+  color: rgb(219, 219, 219) !important;
+  box-shadow: 0px 0px 10px 0px rgb(29, 29, 29) !important;
+}
+
+.blockDark:hover {
+  background-color: rgb(214, 214, 214) !important;
+  box-shadow: 0px 0px 10px 0px rgb(100, 100, 100) !important;
+  color: black !important;
+}
+
+.block:hover {
+  background-color: rgb(70, 70, 70);
+  color: rgb(219, 219, 219);
+  transition: 0.3s;
+}
+
+.blockDark:hover .lineDark:first-child {
+  color: rgb(74, 74, 226) !important;
+}
+
+.block:hover .line:first-child {
+  color: rgb(125, 125, 235);
+  transition: 0.3s;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0 10px 0;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 100px;
+  position: relative;
+}
+
+.line:first-child {
+  color: rgb(74, 74, 226);
+  font-weight: 700;
+}
+
+.lineDark:first-child {
+  color: rgb(125, 125, 235);
+}
+
+.borderBottom {
+  border-bottom: solid 1px rgb(74, 74, 226);
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  top: 100%;
+}
+
+.block:hover .borderBottom {
+  border-color: rgb(125, 125, 235);
+}
+
+.blockDark:hover .borderBottomDark {
+  border-color: rgb(74, 74, 226) !important;
+}
+
+.borderBottomDark {
+  border-bottom: solid 1px rgb(125, 125, 235) !important;
+}
+
+.font300 {
+  margin-right: 5px;
+  font-weight: 300;
+}
+
+.plus {
+  position: absolute;
+  display: flex;
+  font-size: 60px;
+  margin-left: 70px;
+  margin-top: 50px;
+  pointer-events: none;
+  color: rgb(74, 74, 226);
+  font-weight: 300;
+}
+
+.plusDark {
+  color: rgb(125, 125, 235);
+}
+
+.block:hover .plus {
+  color: rgb(125, 125, 235);
+}
+
+.blockDark:hover .plus {
+  color: rgb(74, 74, 226);
+}

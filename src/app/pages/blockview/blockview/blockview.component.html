@@ -1,0 +1,90 @@
+<div class="border">
+  <div
+    *ngFor="let person of people"
+    class="block"
+    [class.blockDark]="this.mode == true"
+    [routerLink]="['/person', person.id]"
+  >
+    <div class="line" [class.lineDark]="this.mode == true">
+      ID - {{ person.id }}
+      <div
+        class="borderBottom"
+        [class.borderBottomDark]="this.mode == true"
+      ></div>
+    </div>
+    <div class="line">
+      {{ person.first_name }}
+      <div
+        class="borderBottom"
+        [class.borderBottomDark]="this.mode == true"
+      ></div>
+    </div>
+    <div class="line">
+      {{ person.second_name }}
+      <div
+        class="borderBottom"
+        [class.borderBottomDark]="this.mode == true"
+      ></div>
+    </div>
+    <!--
+    <div class="line">
+      {{ person.birth_date }}
+      <div class="borderBottom"></div>
+    </div>
+    <div class="line">
+      {{ person.city }}
+      <div class="borderBottom"></div>
+    </div>
+  -->
+    <div class="line">
+      <ng-container *ngIf="person.gender == 'male'"
+        ><span class="material-symbols-outlined font300">
+          male
+        </span></ng-container
+      >
+      <ng-container *ngIf="person.gender == 'female'"
+        ><span class="material-symbols-outlined font300">
+          female
+        </span></ng-container
+      >
+      {{ person.gender }}
+    </div>
+  </div>
+
+  <div
+    class="block"
+    [class.blockDark]="this.mode == true"
+    [routerLink]="['/addperson']"
+  >
+    <span
+      class="material-symbols-outlined plus"
+      [class.plusDark]="this.mode == true"
+    >
+      add_circle
+    </span>
+    <div class="line" style="visibility: hidden">
+      ID
+      <div
+        class="borderBottom"
+        [class.borderBottomDark]="this.mode == true"
+      ></div>
+    </div>
+    <div class="line" style="visibility: hidden">
+      a
+      <div
+        class="borderBottom"
+        [class.borderBottomDark]="this.mode == true"
+      ></div>
+    </div>
+    <div class="line" style="visibility: hidden">
+      a
+      <div
+        class="borderBottom"
+        [class.borderBottomDark]="this.mode == true"
+      ></div>
+    </div>
+    <div class="line" style="visibility: hidden">
+      <span class="material-symbols-outlined font300"> female </span>a
+    </div>
+  </div>
+</div>

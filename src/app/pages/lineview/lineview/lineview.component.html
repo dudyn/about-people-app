@@ -1,0 +1,187 @@
+<div [class.darkMode]="this.mode == true">
+  <button class="filter sort" (click)="openHideSortOptions()">
+    <span class="material-symbols-outlined"> sort </span> SORTING
+  </button>
+</div>
+<div class="filterInput" [class.darkMode]="this.mode == true">
+  <label for="filteredvalue">Value:</label>
+  <input
+    type="text"
+    name="filteredvalue"
+    [(ngModel)]="filterValue"
+    (keyup)="getFilteredPeople(filterBy, filterValue)"
+  />
+  <button class="filter" (click)="openHideFilterOptions()">
+    <span class="material-symbols-outlined"> tune </span> FILTERING
+  </button>
+</div>
+
+<div
+  [class.darkMode]="this.mode == true"
+  [class.opacity]="isFilterOptionsOpen || isSortOptionsOpen"
+>
+  <table class="shadowTop">
+    <tr>
+      <ng-container *ngFor="let title of titles">
+        <th class="bold" [class.darkMode]="this.mode == true">{{ title }}</th>
+      </ng-container>
+    </tr>
+
+    <ng-container *ngFor="let person of people">
+      <tr>
+        <th>{{ person.id }}</th>
+        <th>{{ person.first_name }}</th>
+        <th>{{ person.second_name }}</th>
+        <th>{{ person.birth_date | date: "dd.MM.yyyy" }}r.</th>
+        <th>{{ person.city }}</th>
+        <th>
+          {{
+            person.phone_number.slice(0, 3) +
+              " " +
+              person.phone_number.slice(3, 6) +
+              " " +
+              person.phone_number.slice(6, 9)
+          }}
+        </th>
+        <th>{{ person.email }}</th>
+        <th>{{ person.gender }}</th>
+      </tr>
+    </ng-container>
+
+    <ng-container *ngIf="people.length == 0">
+      <tr>
+        <th>-</th>
+        <th>-</th>
+        <th>-</th>
+        <th>-</th>
+        <th>-</th>
+        <th>-</th>
+        <th>-</th>
+        <th>-</th>
+      </tr>
+    </ng-container>
+  </table>
+</div>
+<div
+  class="tableFooter"
+  [class.darkMode]="this.mode == true"
+  [class.opacity]="isFilterOptionsOpen || isSortOptionsOpen"
+></div>
+
+<div
+  class="filterOption"
+  [class.darkMode]="this.mode == true"
+  [class.hidden]="!isFilterOptionsOpen"
+>
+  <h2>Choose filter property</h2>
+  <div class="buttonsdiv" [class.darkMode]="this.mode == true">
+    <button
+      (click)="filterByFun('id', 0)"
+      [class.checked]="isFilterChecked[0] == true"
+    >
+      id
+    </button>
+    <button
+      (click)="filterByFun('first_name', 1)"
+      [class.checked]="isFilterChecked[1] == true"
+    >
+      first name
+    </button>
+    <button
+      (click)="filterByFun('second_name', 2)"
+      [class.checked]="isFilterChecked[2] == true"
+    >
+      second name
+    </button>
+    <button
+      (click)="filterByFun('city', 3)"
+      [class.checked]="isFilterChecked[3] == true"
+    >
+      city
+    </button>
+    <button
+      (click)="filterByFun('gender', 4)"
+      [class.checked]="isFilterChecked[4] == true"
+    >
+      gender
+    </button>
+    <button
+      (click)="filterByFun('', 5)"
+      [class.checked]="isFilterChecked[5] == true"
+    >
+      clear
+    </button>
+  </div>
+</div>
+
+<div
+  class="sortOption"
+  [class.darkMode]="this.mode == true"
+  [class.hidden]="!isSortOptionsOpen"
+>
+  <h2>Choose sort property</h2>
+  <div class="buttonsdiv" [class.darkMode]="this.mode == true">
+    <button
+      (click)="sortByFun('id', 0)"
+      [class.checked]="isSortChecked[0] == true"
+    >
+      id
+    </button>
+    <button
+      (click)="sortByFun('first_name', 1)"
+      [class.checked]="isSortChecked[1] == true"
+    >
+      first name
+    </button>
+    <button
+      (click)="sortByFun('second_name', 2)"
+      [class.checked]="isSortChecked[2] == true"
+    >
+      second name
+    </button>
+    <button
+      (click)="sortByFun('city', 3)"
+      [class.checked]="isSortChecked[3] == true"
+    >
+      city
+    </button>
+    <button
+      (click)="sortByFun('gender', 4)"
+      [class.checked]="isSortChecked[4] == true"
+    >
+      gender
+    </button>
+    <button
+      class="lastButtonSort"
+      (click)="sortByFun('', 5)"
+      [class.checked]="isSortChecked[5] == true"
+    >
+      clear
+    </button>
+    <div class="borderSort" [class.borderSortDark]="this.mode == true"></div>
+    <div style="margin-bottom: 15px">
+      <div class="sortStyle">
+        <ng-container *ngIf="ascIsChecked == true">
+          <span class="material-symbols-outlined green">check_circle </span>
+        </ng-container>
+        <ng-container *ngIf="ascIsChecked == false">
+          <span class="material-symbols-outlined red" (click)="checkAsc()"
+            >radio_button_unchecked</span
+          >
+        </ng-container>
+        <p>asc</p>
+      </div>
+      <div class="sortStyle">
+        <ng-container *ngIf="ascIsChecked == true">
+          <span class="material-symbols-outlined red" (click)="checkDesc()"
+            >radio_button_unchecked
+          </span>
+        </ng-container>
+        <ng-container *ngIf="ascIsChecked == false">
+          <span class="material-symbols-outlined green">check_circle </span>
+        </ng-container>
+        <p>desc</p>
+      </div>
+    </div>
+  </div>
+</div>

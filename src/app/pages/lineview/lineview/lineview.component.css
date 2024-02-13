@@ -1,0 +1,376 @@
+* {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 500;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  border: 2px solid rgb(74, 74, 226);
+  color: rgb(74, 74, 226);
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 20px 20px 20px 20px;
+  margin: 10px 10px 10px 0;
+}
+
+.filter {
+  background-color: rgb(214, 214, 214);
+}
+
+.darkMode .filter {
+  border: 2px solid rgb(125, 125, 235) !important;
+  color: rgb(125, 125, 235) !important;
+  background-color: rgb(41, 41, 41);
+}
+
+.darkMode.filterInput {
+  color: rgb(219, 219, 219) !important;
+}
+
+.filterInput.darkMode input {
+  border: 2px solid rgb(125, 125, 235) !important;
+}
+
+.filterInput.darkMode input:focus {
+  border: 2px solid rgb(214, 214, 214) !important;
+}
+
+.sort {
+  display: flex;
+  flex-direction: row;
+  float: left;
+  margin-left: 10px;
+}
+
+.filterInput {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  float: right;
+}
+
+.filterInput input {
+  font-size: 14px;
+  height: 36px;
+  border: 2px solid rgb(74, 74, 226);
+  color: black;
+  border-radius: 5px;
+  padding: 20px 20px 20px 20px;
+  background-color: transparent;
+  margin-right: 15px;
+}
+
+.filterInput label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.filter:hover {
+  background-color: rgb(223, 223, 250);
+  cursor: pointer;
+}
+
+.darkMode .filter:hover {
+  background-color: rgb(52, 52, 97) !important;
+}
+
+span {
+  margin-right: 15px;
+}
+
+td,
+th {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(196, 196, 196);
+}
+
+.darkMode tr:nth-child(even) {
+  background-color: rgb(51, 51, 51);
+}
+
+tr:first-child {
+  font-weight: 500;
+  background-color: rgb(74, 74, 226);
+  color: rgb(219, 219, 219);
+}
+
+.darkMode tr:first-child {
+  background-color: rgb(125, 125, 235);
+  color: rgb(219, 219, 219);
+}
+
+.bold {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+tr:hover:not(tr:first-child) {
+  background-color: rgb(70, 70, 70);
+  color: rgb(219, 219, 219);
+}
+
+.darkMode tr:hover:not(tr:first-child) {
+  background-color: rgb(219, 219, 219);
+  color: rgb(30, 30, 30);
+}
+
+.tableFontChange {
+  font-weight: 700;
+}
+
+.tableFooter {
+  width: 100%;
+  height: 25px;
+  background-color: rgb(74, 74, 226);
+  box-shadow: 0px 4px 8px -4px rgba(71, 71, 71);
+}
+
+.tableFooter.darkMode {
+  background-color: rgb(125, 125, 235) !important;
+}
+
+.shadowTop {
+  box-shadow: 0px -4px 8px -4px rgba(71, 71, 71);
+}
+
+.buttonsdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.filterOption {
+  position: absolute;
+  top: 7rem;
+  right: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  color: black;
+  border-radius: 15px;
+  background-color: rgb(214, 214, 214);
+  box-shadow: 0px 0px 10px 0px rgb(100, 100, 100);
+  padding: 10px 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.filterOption h2 {
+  color: rgb(43, 43, 43);
+  font-weight: 500;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.sortOption {
+  position: absolute;
+  top: 7rem;
+  left: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  color: black;
+  border-radius: 15px;
+  background-color: rgb(214, 214, 214);
+  box-shadow: 0px 0px 10px 0px rgb(100, 100, 100);
+  padding: 10px 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.darkMode.sortOption,
+.darkMode.filterOption {
+  background-color: rgb(70, 70, 70) !important;
+  box-shadow: 0px 0px 10px 0px rgb(29, 29, 29) !important;
+}
+
+.darkMode.sortOption h2 {
+  color: rgb(219, 219, 219) !important;
+}
+
+.darkMode .sortStyle p {
+  color: rgb(219, 219, 219) !important;
+}
+
+.sortOption h2 {
+  color: rgb(43, 43, 43);
+  font-weight: 500;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.hidden {
+  display: none;
+}
+
+.opacity {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.darkMode.opacity {
+  opacity: 0.4 !important;
+}
+
+.filterOption button,
+.sortOption button {
+  background-color: rgb(74, 74, 226);
+  color: rgb(255, 255, 255);
+  padding: 10px 0 10px 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 25px;
+  width: 100px;
+  font-size: 16px;
+  background-color: rgb(74, 74, 226);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sortOption .darkMode button,
+.filterOption .darkMode button {
+  background-color: rgb(125, 125, 235);
+  color: rgb(255, 255, 255);
+}
+
+.sortOption .darkMode button:hover,
+.filterOption .darkMode button:hover {
+  background-color: rgb(214, 214, 214);
+  color: rgb(29, 29, 29);
+}
+
+.filterOption button:last-child {
+  background-color: rgb(41, 128, 77);
+}
+
+.lastButtonSort,
+.darkMode.filterOption button:last-child {
+  background-color: rgb(41, 128, 77) !important;
+}
+
+.darkMode .lastButtonSort:hover,
+.darkMode.filterOption button:last-child:hover {
+  background-color: rgb(214, 214, 214) !important;
+  color: rgb(29, 29, 29) !important;
+}
+
+.darkMode .lastButtonSort {
+  background-color: rgb(41, 128, 77) !important;
+}
+
+.lastButtonSort:hover {
+  background-color: rgba(71, 71, 71) !important;
+}
+
+.filterOption button:hover,
+.sortOption button:hover {
+  background-color: rgba(71, 71, 71);
+}
+
+.checked {
+  background-color: rgb(243, 243, 243) !important;
+  color: rgb(74, 74, 226) !important;
+  border: 2px solid rgb(74, 74, 226) !important;
+  font-weight: 700;
+}
+
+.sortStyle {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: left;
+  color: black;
+  margin: 5px 0 5px 0;
+}
+
+.sortStyle .green {
+  font-size: 25px;
+  color: rgb(41, 128, 77);
+}
+
+.sortStyle .red {
+  font-size: 25px;
+  color: rgb(150, 33, 33);
+}
+
+.sortStyle span:hover {
+  cursor: pointer;
+}
+
+.borderSort {
+  width: 150px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(74, 74, 226);
+}
+
+.borderSortDark {
+  border: 1px solid rgb(125, 125, 235) !important;
+}
+
+.darkMode tr {
+  color: rgb(175, 175, 175);
+}
+
+.darkMode.bold {
+  color: rgb(226, 226, 226) !important;
+}
+
+.darkMode input:focus {
+  outline: none;
+  border: solid 2px rgb(214, 214, 214);
+}
+
+input:focus {
+  outline: none;
+  border: solid 2px black !important;
+}
+
+.darkMode input {
+  color: rgb(214, 214, 214);
+}
